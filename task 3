@@ -19,7 +19,6 @@ def find_primes_in_range(start, end):
             primes.append(num)
     return primes
 
-# Ввод пользователем
 start = int(input("Введите начало диапазона: "))
 end = int(input("Введите конец диапазона: "))
 
