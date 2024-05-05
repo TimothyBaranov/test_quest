@@ -1,4 +1,5 @@
-def computer_count(n):
+def computer_count():
+    n = int(input("Введите количество компьютеров: "))
     if n % 10 == 1 and n % 100 != 11:
         return f"{n} компьютер"
     elif 2 <= n % 10 <= 4 and (n % 100 < 10 or n % 100 >= 20):
@@ -6,7 +7,5 @@ def computer_count(n):
     else:
         return f"{n} компьютеров"
 
-# Примеры использования
-print(computer_count(25))   # 25 компьютеров
-print(computer_count(41))   # 41 компьютер
-print(computer_count(1048)) # 1048 компьютеров
+# Пример использования
+print(computer_count())
