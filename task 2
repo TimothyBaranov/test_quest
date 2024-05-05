@@ -1,19 +1,15 @@
 def find_common_divisors(numbers):
     if not numbers:
         return []
-
-    # Находим наименьшее число в массиве
     min_number = min(numbers)
-
-    # Инициализируем список общих делителей как делители наименьшего числа
-    common_divisors = [i for i in range(1, min_number + 1) if min_number % i == 0]
-
-    # Проверяем, являются ли остальные числа общими делителями
-    for number in numbers[1:]:
-        common_divisors = [divisor for divisor in common_divisors if number % divisor == 0]
+    common_divisors = [i for i in range(
+        1, min_number + 1) if all(num % i == 0 for num in numbers)]
 
     return common_divisors
 
-# Пример использования
-numbers = [42, 12, 18]
-print(find_common_divisors(numbers))  # [1, 2, 3, 6]
+
+# Ввод пользователем
+numbers = input("Введите числа через запятую: ").split(',')
+numbers = [int(num) for num in numbers]
+
+print("Общие делители:", find_common_divisors(numbers))
